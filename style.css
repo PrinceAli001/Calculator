@@ -19,6 +19,27 @@
     width: 250px;
     margin: 20px auto 10px auto;
 }
+#delAndClear{
+    display: flex;
+}
+#del{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid red;
+    height: 40px;
+    width: 80px;
+    margin: 0 auto 5px 5px;
+}
+#clear{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid red;
+    height: 40px;
+    width: 80px;
+    margin: 0 5px 5px auto;
+}
 #number-and-signs-container{
     /* border: 4px solid red; */
     gap: 10px;
@@ -51,15 +72,6 @@
     width: 120px;
     margin-left: 10px;
     margin-bottom: 0;
-}
-#clear{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 4px solid red;
-    height: 40px;
-    width: 80px;
-    margin: 0 5px 5px auto;
 }
 #answer{
     display: flex;
