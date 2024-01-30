@@ -5,16 +5,19 @@
 }
 #calculator-main-body{
     border: 4px solid red;
+    border-radius: 10px;
     margin: 50px auto 0 auto;
+    background-color: crimson;
     width: 300px;
-    height: 480px;
+    height: 435px;
     
 }
 #display{
     display: flex;
     justify-content: end;
     align-items: end;
-    border: 4px solid red;
+    border: 2px solid white;
+    background-color: white;
     height: 60px;
     width: 250px;
     margin: 20px auto 10px auto;
@@ -27,7 +30,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid red;
+    border: 2px solid whitesmoke;
+    background-color: greenyellow;
+    box-shadow: 1px 1px 3px white;
+    border-radius: 5px;
     height: 40px;
     width: 80px;
     margin: 0 auto 5px 5px;
@@ -36,7 +42,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid red;
+    border: 2px solid whitesmoke;
+    background-color: greenyellow;
+    box-shadow: 1px 1px 3px white;
+    border-radius: 5px;
     height: 40px;
     width: 80px;
     margin: 0 5px 5px auto;
@@ -47,41 +56,107 @@
     display: flex;
     flex-wrap: wrap;
 }
-.numbers,#add,#subtract,#multiply{
+.numbers{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid red;
+    border: 2px solid white;
+    background-color: darkgrey;
+    border-radius: 5px;
     height: 60px;
     width: 60px;
     margin-bottom: 10px;
+    box-shadow: 1px 1px 3px white;
 }
-#divide,#dot{
+.numbers:active{
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+}
+#add,#subtract,#multiply{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid red;
+    border: 3px solid blueviolet;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px;
+    height: 60px;
+    width: 60px;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+#add:active{
+    background-color: white;
+    color: blueviolet;
+}
+#subtract:active{
+    background-color: white;
+    color: blueviolet;
+}
+#multiply:active{
+    background-color: white;
+    color: blueviolet;
+}
+#divide:active{
+    background-color: white;
+    color: blueviolet;
+}
+#divide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid blueviolet;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px;
     height: 40px;
     width: 60px;
+    font-size: 28px;
+}
+#dot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    height: 40px;
+    margin-left: 10px;
+    width: 60px;
+    font-size: 28px;
+    box-shadow: 1px 1px 3px white ;
+}
+#dot:active{
+    background-color: black;
+    border: 2px solid white;
+    color: white;
 }
 #zero{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid red;
+    border: 2px solid white;
     height: 40px;
-    width: 120px;
-    margin-left: 10px;
+    width: 60px;
     margin-bottom: 0;
+    box-shadow: 1px 1px 3px white;
 }
 #answer{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid red;
+    background-color: white;
+    border-radius: 5px;
     height: 40px;
-    width: 160px;
-    margin: 10px auto 0 auto;
+    width: 60px;
+    box-shadow: 1px 1px 3px white;
+}
+#answer:active{
+    background-color: black;
+    border: 2px solid white;
+    color: white;
 }
 #one,#four,#seven{
     margin-left: 10px;

@@ -5,6 +5,7 @@ let display = document.querySelector('#display')
 let equation = document.querySelector('#equation')
 let solution = document.createElement('div')
 let numbers = document.querySelectorAll('.numbers')
+let zero = document.querySelector('#zero')
 let addtion = document.querySelector('#add')
 let subtraction = document.querySelector('#subtract')
 let multiplication = document.querySelector('#multiply')
@@ -35,14 +36,18 @@ function divide(a,b) {
 function getNumbersAndSigns() {
     numbers.forEach((number) => {
         number.addEventListener('click', () => {
-            if (equation.textContent.includes(0)) {
+            if (equation.textContent.includes(` 0`) && 
+                equation.textContent.includes(` - `)) {
+                equation.textContent = "";
+                equation.textContent += subtraction.textContent
+            }else if (equation.textContent.includes(` 0`)) {
                 equation.textContent = "";
             }
             equation.textContent += number.textContent
         })
     })
     addtion.addEventListener('click', () => {
-        if (equation.textContent.includes('/ 0')) {
+        if (equation.textContent.includes(`${division.textContent} 0`)) {
             equation.textContent = `MATH error`
          } else {
             if (equation.textContent.includes('+')) {
@@ -52,14 +57,14 @@ function getNumbersAndSigns() {
                 equation.textContent += `${previousSolution} ${addtion.textContent} `
                 firstNumber = 0
                 secondNumber = 0
-            } else if (equation.textContent.includes('*')) {
+            } else if (equation.textContent.includes(`${multiplication.textContent}`)) {
                 getFirstAndSecondNumbers()
                 previousSolution = multiply(firstNumber,secondNumber)
                 equation.textContent = '';
                 equation.textContent += `${previousSolution} ${addtion.textContent} `
                 firstNumber = 0
                 secondNumber = 0
-            } else if (equation.textContent.includes('/')) {
+            } else if (equation.textContent.includes(`${division.textContent}`)) {
                 getFirstAndSecondNumbers()
                 previousSolution = divide(firstNumber,secondNumber)
                 equation.textContent = '';
@@ -79,7 +84,7 @@ function getNumbersAndSigns() {
          }
     })
     subtraction.addEventListener('click', () => {
-        if (equation.textContent.includes('/ 0')) {
+        if (equation.textContent.includes(`${division.textContent} 0`)) {
             equation.textContent = `MATH error`
          } else {
             if (equation.textContent.includes('+')) {
@@ -89,14 +94,14 @@ function getNumbersAndSigns() {
                 equation.textContent += `${previousSolution} ${subtraction.textContent} `
                 firstNumber = 0
                 secondNumber = 0
-            } else if (equation.textContent.includes('*')) {
+            } else if (equation.textContent.includes(`${multiplication.textContent}`)) {
                 getFirstAndSecondNumbers()
                 previousSolution = multiply(firstNumber,secondNumber)
                 equation.textContent = '';
                 equation.textContent += `${previousSolution} ${subtraction.textContent} `
                 firstNumber = 0
                 secondNumber = 0
-            } else if (equation.textContent.includes('/')) {
+            } else if (equation.textContent.includes(`${division.textContent}`)) {
                 getFirstAndSecondNumbers()
                 previousSolution = divide(firstNumber,secondNumber)
                 equation.textContent = '';
@@ -116,7 +121,7 @@ function getNumbersAndSigns() {
          }
     })
     multiplication.addEventListener('click', () => {
-        if (equation.textContent.includes('/ 0')) {
+        if (equation.textContent.includes(`${division.textContent} 0`)) {
             equation.textContent = `MATH error`
          } else {
             if (equation.textContent.includes('+')) {
@@ -126,14 +131,14 @@ function getNumbersAndSigns() {
                 equation.textContent += `${previousSolution} ${multiplication.textContent} `
                 firstNumber = 0
                 secondNumber = 0
-            } else if (equation.textContent.includes('*')) {
+            } else if (equation.textContent.includes(`${multiplication.textContent}`)) {
                 getFirstAndSecondNumbers()
                 previousSolution = multiply(firstNumber,secondNumber)
                 equation.textContent = '';
                 equation.textContent += `${previousSolution} ${multiplication.textContent} `
                 firstNumber = 0
                 secondNumber = 0
-            } else if (equation.textContent.includes('/')) {
+            } else if (equation.textContent.includes(`${division.textContent}`)) {
                 getFirstAndSecondNumbers()
                 previousSolution = divide(firstNumber,secondNumber)
                 equation.textContent = '';
@@ -153,7 +158,7 @@ function getNumbersAndSigns() {
          }
     })
     division.addEventListener('click', () => {
-        if (equation.textContent.includes('/ 0')) {
+        if (equation.textContent.includes(`${division.textContent} 0`)) {
             equation.textContent = `MATH error`
          } else {
             if (equation.textContent.includes('+')) {
@@ -163,14 +168,14 @@ function getNumbersAndSigns() {
                 equation.textContent += `${previousSolution} ${division.textContent} `
                 firstNumber = 0
                 secondNumber = 0
-            } else if (equation.textContent.includes('*')) {
+            } else if (equation.textContent.includes(`${multiplication.textContent}`)) {
                 getFirstAndSecondNumbers()
                 previousSolution = multiply(firstNumber,secondNumber)
                 equation.textContent = '';
                 equation.textContent += `${previousSolution} ${division.textContent} `
                 firstNumber = 0
                 secondNumber = 0
-            } else if (equation.textContent.includes('/')) {
+            } else if (equation.textContent.includes(`${division.textContent}`)) {
                 getFirstAndSecondNumbers()
                 previousSolution = divide(firstNumber,secondNumber)
                 equation.textContent = '';
@@ -209,15 +214,15 @@ function getFirstAndSecondNumbers() {
         secondNumber += values[1]
         operator = '-'
         return
-    } else  if (equation.textContent.includes(`*`)) {
-        let values = equation.textContent.split(' * ')
+    } else  if (equation.textContent.includes(multiplication.textContent)) {
+        let values = equation.textContent.split(` ${multiplication.textContent} `)
 
         firstNumber += values[0]
         secondNumber += values[1]
         operator = '*'
         return
     } else {
-        let values = equation.textContent.split(' / ')
+        let values = equation.textContent.split(` ${division.textContent} `)
 
         firstNumber += values[0]
         secondNumber += values[1]
@@ -247,7 +252,7 @@ function operate(symbol,firstDigit,secondDigit) {
         let currentAnswer = multiply(firstDigit,secondDigit)
         solution.textContent = currentAnswer
        
-    } else {
+    } else if (symbol == '/') {
         let currentAnswer =  divide(firstDigit,secondDigit)
         solution.textContent = currentAnswer
        
@@ -259,7 +264,7 @@ function operate(symbol,firstDigit,secondDigit) {
 answer.addEventListener('click', () => {
     if (equation.textContent == 0) {
        alert('Type in an expression')
-    }else if (equation.textContent.includes('/ 0')) {
+    }else if (equation.textContent.includes(`${division.textContent} 0`)) {
         equation.textContent = `MATH error`
      } else {
         getFirstAndSecondNumbers()
@@ -270,7 +275,7 @@ answer.addEventListener('click', () => {
             operate('-',firstNumber,secondNumber) 
         } else if (operator == '*') {
             operate('*',firstNumber,secondNumber) 
-        } else {
+        } else if (operator == '/') {
             operate('/',firstNumber,secondNumber) 
         }
     }
@@ -287,7 +292,7 @@ del.addEventListener('click', () => {
 })
 
 clear.addEventListener('click', () => {
-    equation.textContent = 0;
+    equation.textContent = ` 0`;
     firstNumber = 0
     secondNumber = 0
     display.setAttribute('style','display: flex;')
