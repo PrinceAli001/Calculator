@@ -18,6 +18,7 @@
     height: 60px;
     width: 250px;
     margin: 20px auto 10px auto;
+    overflow: hidden;
 }
 #delAndClear{
     display: flex;

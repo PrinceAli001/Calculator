@@ -42,136 +42,152 @@ function getNumbersAndSigns() {
         })
     })
     addtion.addEventListener('click', () => {
-        if (equation.textContent.includes('+')) {
-            getFirstAndSecondNumbers()
-            previousSolution = add(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${addtion.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else if (equation.textContent.includes('*')) {
-            getFirstAndSecondNumbers()
-            previousSolution = multiply(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${addtion.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else if (equation.textContent.includes('/')) {
-            getFirstAndSecondNumbers()
-            previousSolution = divide(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${addtion.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else if (equation.textContent.includes('-')) {
-            getFirstAndSecondNumbers()
-            previousSolution = subtract(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${addtion.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else {
-            equation.textContent += ` ${addtion.textContent} `
-        }
+        if (equation.textContent.includes('/ 0')) {
+            equation.textContent = `MATH error`
+         } else {
+            if (equation.textContent.includes('+')) {
+                getFirstAndSecondNumbers()
+                previousSolution = add(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${addtion.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else if (equation.textContent.includes('*')) {
+                getFirstAndSecondNumbers()
+                previousSolution = multiply(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${addtion.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else if (equation.textContent.includes('/')) {
+                getFirstAndSecondNumbers()
+                previousSolution = divide(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${addtion.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else if (equation.textContent.includes('-')) {
+                getFirstAndSecondNumbers()
+                previousSolution = subtract(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${addtion.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else {
+                equation.textContent += ` ${addtion.textContent} `
+            }
+         }
     })
     subtraction.addEventListener('click', () => {
-        if (equation.textContent.includes('+')) {
-            getFirstAndSecondNumbers()
-            previousSolution = add(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${subtraction.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else if (equation.textContent.includes('*')) {
-            getFirstAndSecondNumbers()
-            previousSolution = multiply(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${subtraction.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else if (equation.textContent.includes('/')) {
-            getFirstAndSecondNumbers()
-            previousSolution = divide(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${subtraction.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else if (equation.textContent.includes('-')) {
-            getFirstAndSecondNumbers()
-            previousSolution = subtract(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${subtraction.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else {
-            equation.textContent += ` ${subtraction.textContent} `
-        }
+        if (equation.textContent.includes('/ 0')) {
+            equation.textContent = `MATH error`
+         } else {
+            if (equation.textContent.includes('+')) {
+                getFirstAndSecondNumbers()
+                previousSolution = add(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${subtraction.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else if (equation.textContent.includes('*')) {
+                getFirstAndSecondNumbers()
+                previousSolution = multiply(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${subtraction.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else if (equation.textContent.includes('/')) {
+                getFirstAndSecondNumbers()
+                previousSolution = divide(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${subtraction.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else if (equation.textContent.includes('-')) {
+                getFirstAndSecondNumbers()
+                previousSolution = subtract(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${subtraction.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else {
+                equation.textContent += ` ${subtraction.textContent} `
+            }
+         }
     })
     multiplication.addEventListener('click', () => {
-        if (equation.textContent.includes('+')) {
-            getFirstAndSecondNumbers()
-            previousSolution = add(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${multiplication.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else if (equation.textContent.includes('*')) {
-            getFirstAndSecondNumbers()
-            previousSolution = multiply(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${multiplication.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else if (equation.textContent.includes('/')) {
-            getFirstAndSecondNumbers()
-            previousSolution = divide(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${multiplication.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else if (equation.textContent.includes('-')) {
-            getFirstAndSecondNumbers()
-            previousSolution = subtract(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${multiplication.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else {
-            equation.textContent += ` ${multiplication.textContent} `
-        }
+        if (equation.textContent.includes('/ 0')) {
+            equation.textContent = `MATH error`
+         } else {
+            if (equation.textContent.includes('+')) {
+                getFirstAndSecondNumbers()
+                previousSolution = add(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${multiplication.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else if (equation.textContent.includes('*')) {
+                getFirstAndSecondNumbers()
+                previousSolution = multiply(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${multiplication.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else if (equation.textContent.includes('/')) {
+                getFirstAndSecondNumbers()
+                previousSolution = divide(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${multiplication.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else if (equation.textContent.includes('-')) {
+                getFirstAndSecondNumbers()
+                previousSolution = subtract(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${multiplication.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else {
+                equation.textContent += ` ${multiplication.textContent} `
+            }
+         }
     })
     division.addEventListener('click', () => {
-        if (equation.textContent.includes('+')) {
-            getFirstAndSecondNumbers()
-            previousSolution = add(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${division.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else if (equation.textContent.includes('*')) {
-            getFirstAndSecondNumbers()
-            previousSolution = multiply(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${division.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else if (equation.textContent.includes('/')) {
-            getFirstAndSecondNumbers()
-            previousSolution = divide(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${division.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else if (equation.textContent.includes('-')) {
-            getFirstAndSecondNumbers()
-            previousSolution = subtract(firstNumber,secondNumber)
-            equation.textContent = '';
-            equation.textContent += `${previousSolution} ${division.textContent} `
-            firstNumber = 0
-            secondNumber = 0
-        } else {
-            equation.textContent += ` ${division.textContent} `
-        }
+        if (equation.textContent.includes('/ 0')) {
+            equation.textContent = `MATH error`
+         } else {
+            if (equation.textContent.includes('+')) {
+                getFirstAndSecondNumbers()
+                previousSolution = add(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${division.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else if (equation.textContent.includes('*')) {
+                getFirstAndSecondNumbers()
+                previousSolution = multiply(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${division.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else if (equation.textContent.includes('/')) {
+                getFirstAndSecondNumbers()
+                previousSolution = divide(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${division.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else if (equation.textContent.includes('-')) {
+                getFirstAndSecondNumbers()
+                previousSolution = subtract(firstNumber,secondNumber)
+                equation.textContent = '';
+                equation.textContent += `${previousSolution} ${division.textContent} `
+                firstNumber = 0
+                secondNumber = 0
+            } else {
+                equation.textContent += ` ${division.textContent} `
+            }
+         }
     })
     dot.addEventListener('click', () => {return equation.textContent.includes('.') ? equation.textContent += '' : equation.textContent += `${dot.textContent}`;})
 }
@@ -241,16 +257,22 @@ function operate(symbol,firstDigit,secondDigit) {
 
 
 answer.addEventListener('click', () => {
-    getFirstAndSecondNumbers()
+    if (equation.textContent == 0) {
+       alert('Type in an expression')
+    }else if (equation.textContent.includes('/ 0')) {
+        equation.textContent = `MATH error`
+     } else {
+        getFirstAndSecondNumbers()
 
-    if (operator == '+') {
-        operate('+',firstNumber,secondNumber) 
-    } else if (operator == '-') {
-        operate('-',firstNumber,secondNumber) 
-    } else if (operator == '*') {
-        operate('*',firstNumber,secondNumber) 
-    } else {
-        operate('/',firstNumber,secondNumber) 
+        if (operator == '+') {
+            operate('+',firstNumber,secondNumber) 
+        } else if (operator == '-') {
+            operate('-',firstNumber,secondNumber) 
+        } else if (operator == '*') {
+            operate('*',firstNumber,secondNumber) 
+        } else {
+            operate('/',firstNumber,secondNumber) 
+        }
     }
 })
 
@@ -273,4 +295,3 @@ clear.addEventListener('click', () => {
 })
 
 getNumbersAndSigns()
-
