@@ -287,7 +287,7 @@ del.addEventListener('click', () => {
      equation.textContent = newChar;
      
      if (equation.textContent === '') {
-        equation.textContent = 0;
+        equation.textContent = ` 0`;
      }
 })
 
@@ -298,5 +298,7 @@ clear.addEventListener('click', () => {
     display.setAttribute('style','display: flex;')
     display.removeChild(solution)
 })
+
+
 
 getNumbersAndSigns()
