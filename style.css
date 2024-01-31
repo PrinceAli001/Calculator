@@ -4,10 +4,11 @@
     font-family: sans-serif;
 }
 #calculator-main-body{
-    border: 4px solid red;
+    border: 3px solid darkgrey;
     border-radius: 10px;
     margin: 50px auto 0 auto;
-    background-color: crimson;
+    background-image: linear-gradient(black,black,darkgrey);
+    box-shadow: 3px 3px 3px;
     width: 300px;
     height: 435px;
     
